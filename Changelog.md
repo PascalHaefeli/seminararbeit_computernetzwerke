@@ -17,11 +17,13 @@
 04022026
 	added etherchannel in two separate ways; in the base file, I used ports fa23-24 and gig0/2 as trunk (unneccessary) and in the new file from 04022026 i used fa21-22, instead, where i did not have remnants of l3 config that prevented me from trunking (couldn't get rid of them, so i used different ports)
 
+05022026
+	- saved startup-config of the switches with "copy running-config startup-config"
+		Solution to task 7 - Resilience; in case of a power outage, nothing will work, but it will work again once power is restored as settings are saved even when the switches are shut down.
+	- tried to reset port settings to default for fa0/23-24 on both switches, but it didn't do anything. command: Switch'#': default interface fa0/24 or fa0/23, respectively
+		layer 3 settings keep me from allowing trunking between them, but the command doesn't reset their settings and I don't know what else to try, so I'll just keep using fa0/21-22, instead, where everything seems to work just fine.
+	- updated documentation, added page numbers and changed the names in the header
+
 To-Do:
-    - Die Portbelegung, für die ich mich entscheide, in der Dokumentation updaten.
-	- Scalability
-		Aktuell haben wir die Ports 1-4 bei den Switches jeweils einem VLAN zugewiesen, Port 0/5 ist bei Switch0 für den DHCP; die anderen Ports sind nicht zugewiesen. Wir müssten die Ports jeweils so zuweisen, dass weitere Geräte verbunden werden könnten (dafür haben wir zu wenige Ports auf einem Switch - wir haben 24, es sollten aber 100 Geräte unterstützt werden)
-	- Resilience
-		Wie schaffen wir es, dass das System bei einem Stromausfall noch funktioniert? Wir können ja keinen Notgenerator im PT verwenden, oder?
-	- Dokumentation
-		Wir müssen unsere Entscheidungen noch beschreiben und begründen, sowie alles erklären, das nicht funktioniert, was das Problem sein könnte und was wir versucht haben (Teilpunkte).
+	- DNS dokumentieren
+	- Korrekturlesen
