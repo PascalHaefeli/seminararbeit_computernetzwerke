@@ -24,6 +24,7 @@
 		layer 3 settings keep me from allowing trunking between them, but the command doesn't reset their settings and I don't know what else to try, so I'll just keep using fa0/21-22, instead, where everything seems to work just fine.
 	- updated documentation, added page numbers and changed the names in the header
 
-To-Do:
-	- DNS dokumentieren
-	- Korrekturlesen
+07022026
+	- Dokumentation um DNS und Probleme ergänzt
+	- Dokumentation korrekturgelesen
+	- Dokumentation als .pdf exportiert und abgegeben
